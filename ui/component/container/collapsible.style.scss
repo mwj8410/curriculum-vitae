@@ -1,0 +1,15 @@
+.container-collapsible {
+
+  .title {
+
+  }
+
+  .content {
+    height: 0;
+    overflow: hidden;
+
+    &.open {
+      height: auto;
+    }
+  }
+}

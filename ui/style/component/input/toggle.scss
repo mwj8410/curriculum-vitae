@@ -1,0 +1,31 @@
+button.toggle {
+  // ToDo: isolate these measurements into the theme for total line flow heights
+  $xs: 16;
+  $sm: 24;
+  $med: 32;
+  $lg: 64;
+
+  background: 0;
+  border: 0;
+  padding: 0;
+  text-align: center;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.x-small svg {
+    height: $xs + unquote('px');
+    width: $xs + unquote('px');
+  }
+
+  &.small svg {
+    height: $sm + unquote('px');
+    width: $sm + unquote('px');
+  }
+
+  &.large svg {
+    height: $lg + unquote('px');
+    width: $lg + unquote('px');
+  }
+}

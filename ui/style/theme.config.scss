@@ -1,0 +1,67 @@
+// sass-lint:disable no-color-keywords
+
+// ----- ----- ----- ----- //
+// -----   Layout    ----- //
+// ----- ----- ----- ----- //
+$container-breakpoints: (
+  medium,
+  large
+);
+
+// ----- ----- ----- ----- //
+// -----   Palette   ----- //
+// ----- ----- ----- ----- //
+$theme-colors: (
+  backdrop: (
+    background: ( black, 100 )
+  ),
+  container: (
+    background: ( grey, 900 ),
+    border: ( blue, 600 ),
+    border-error: ( red, 300 ),
+    back-shadow: ( blue, 900 ),
+    back-shadow-error: ( red, 900 ),
+    foreground: ( white, 100 ),
+    selected-background: ( cyan, 100 )
+  ),
+  field: (
+    background: ( white, 100 ),
+    //border: ( grey, 400 ),
+    error: ( red, 300 ),
+    forground: ( grey, 600 ),
+    overlay: ( grey, 900 ),
+    required: ( red, 300 )
+  ),
+  navigation: (
+    action-background: ( cyan, 800 ),
+    background: ( grey, 600 ),
+    background-active: ( cyan, 800 ),
+    foreground: ( grey, 200 )
+    //foreground-active: ( grey, 600 ),
+  ),
+  timer: (
+    face-line: ( black, 100 ),
+    second-hand: ( red, 300 ),
+    minute-hand: ( blue, 600)
+  )
+);
+
+// ----- ----- ----- ----- //
+// ----- Typography  ----- //
+// ----- ----- ----- ----- //
+$font-palettes: (
+  openSansBoldItallic: (
+    font-family: 'Open Sans',
+    font-style: italic,
+    font-weight: 600
+  )
+);
+
+$type-sets: (
+  mainHeading: (
+    color: #f0f,
+    font-size: 72px,
+    letter-spacing: -0.5px,
+    line-height: 72px
+  )
+);

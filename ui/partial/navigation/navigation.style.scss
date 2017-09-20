@@ -1,0 +1,20 @@
+@import '../../style/imports';
+
+nav.nav-main {
+  display: flex;
+  outline: 1px solid black;
+  width: 100%;
+
+  .wrapper-logo {
+    margin-right: 32px;
+    padding: 16px 8px;
+  }
+
+  .nav-item {
+    padding: 16px 16px;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+}

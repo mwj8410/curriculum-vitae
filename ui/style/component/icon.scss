@@ -1,0 +1,64 @@
+div.icon-base {
+  // ToDo: isolate these measurements into the theme for total line flow heights
+  $xs: 16;
+  $sm: 24;
+  $med: 32;
+  $lg: 64;
+
+  // These measurements should come from generic control or line heights
+  &:not(.outlined) {
+    svg {
+      fill: currentColor;
+      height: $med + unquote('px');
+      stroke: currentColor;
+      width: $med + unquote('px');
+    }
+
+    &.x-small svg {
+      height: $xs + unquote('px');
+      width: $xs + unquote('px');
+    }
+
+    &.small svg {
+      height: $sm + unquote('px');
+      width: $sm + unquote('px');
+    }
+
+    &.large svg {
+      height: $lg + unquote('px');
+      width: $lg + unquote('px');
+    }
+  }
+
+  &.outlined {
+    // When an outline is present, we need to reduce the total height and widt of the element by
+    // twice the thickness of the border
+
+    // ToDo: isolate the border width as a theme variable
+    svg {
+      border: 1px solid currentColor;
+      border-radius: 8px;
+      fill: currentColor;
+      height: $med - 2 + unquote('px');
+      stroke: currentColor;
+      width: $med - 2 + unquote('px');
+    }
+
+    &.x-small svg {
+      border-radius: 4px;
+      height: $xs - 2 + unquote('px');
+      width: $xs - 2 + unquote('px');
+    }
+
+    &.small svg {
+      border-radius: 4px;
+      height: $sm - 2 + unquote('px');
+      width: $sm - 2 + unquote('px');
+    }
+
+    &.large svg {
+      height: $lg - 2 + unquote('px');
+      width: $lg - 2 + unquote('px');
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import '../../style/imports';
+
+nav {
+  height: 32px;
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+
+  .control {
+    background: color(navigation, background);
+    color: color(navigation, foreground);
+    cursor: pointer;
+    padding: 4px 8px;
+    position: absolute;
+    top: 0px;
+    width: 150px;
+
+    &:hover {
+      background: color(navigation, background-active);
+    }
+  }
+
+  .control-application {
+    left: 16px;
+  }
+
+  .control-user {
+    right: 16px;
+  }
+}

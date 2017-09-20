@@ -1,0 +1,26 @@
+@mixin breakpoint($value) {
+  $bpName: nth($value, 1);
+  $directionName: nth($value, 2);
+
+  @if $directionName == up {
+    @media screen and (min-width: breakpoint-size($bpName)) {
+      @content;
+    }
+  }
+  @else if $directionName == down {
+    @media screen and (max-width: map-get-next-by-key($breakpoints, $bpName)) {
+      @content;
+    }
+  }
+  @else if $directionName == only {
+    @media screen and (min-width: breakpoint-size($bpName)) and (max-width: map-get-next-by-key($breakpoints, $bpName)) {
+      @content;
+    }
+  }
+  @else {
+    // Functionally the same as 'up'
+    @media screen and (min-width: breakpoint-size($bpName)) {
+      @content;
+    }
+  }
+}

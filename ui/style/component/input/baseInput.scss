@@ -1,0 +1,89 @@
+@import '../../imports';
+
+.input-base {
+  display: inline-block;
+  padding-left: 8px;
+  position: relative;
+
+  label {
+    font-size: 18px;
+  }
+
+  .overlay {
+    bottom: 0;
+    opacity: 0.5;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .wrapper {
+    display: inline-block;
+    height: 100%;
+  }
+
+  input {
+    background: none;
+    border: 0;
+    border-bottom: 1px solid color(field, error);
+    margin-top: 14px;
+    outline: 0;
+  }
+
+  .prompt-message {
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+  }
+
+  .error-message {
+    bottom: 0;
+    color: color(field, error);
+    display: none;
+    font-size: 14px;
+    max-width: 100%;
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    text-wrap: none;
+    white-space: nowrap;
+  }
+
+  &.submitting {
+    .overlay {
+      background-color: color(field, overlay);
+    }
+  }
+
+  &.invalid {
+    input {
+      border-bottom-color: color(field, error);
+    }
+
+    .error-message {
+      display: block;
+    }
+  }
+
+  &.disabled {
+    input {
+      border-bottom-color: color(field, border);
+    }
+  }
+
+  &.required {
+    label::before {
+      background-color: color(field, required);
+      border-radius: 16px;
+      content: '';
+      height: 4px;
+      left: 4px;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 4px;
+    }
+  }
+}

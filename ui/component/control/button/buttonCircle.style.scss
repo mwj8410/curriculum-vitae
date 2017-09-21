@@ -1,0 +1,13 @@
+@import '../../../style/imports';
+
+button.base.button-circle {
+  background-color: color(control, background);
+  border: 1px solid color(control, border);
+  border-radius: 32px;
+  height: 32px;
+  width: 32px;
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,7 +1,10 @@
+@import '../../style/imports';
+
 .container-collapsible {
 
   .title {
-
+    @include typeset(label);
+    margin-left: 16px;
   }
 
   .content {

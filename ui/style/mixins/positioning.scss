@@ -1,0 +1,21 @@
+// Anchor rules set the draw point to a specific position in the current position area
+@mixin anchorCenter() {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+// Covers entire view area
+@mixin backdrop() {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1100;
+}
+
+// Origin rules set the origin of the element. Top-Left is default.
+@mixin originCenter() {
+  transform: translate(-50% ,-50%);
+}

@@ -1,0 +1,23 @@
+@import '../../style/imports';
+
+.indicator-pip {
+  background-color: color(pip, background);
+  border: solid 1px color(pip, border);
+  border-radius: 64px;
+  height: 32px;
+  transition: background-color 0.5s, border 0.5s, height 0.5s 0.5s, width 0.5s 0.5s, margin-bottom 0.5s 0.5s, margin-right 0.5s 0.5s;
+  width: 32px;
+
+  &.final {
+    background-color: color(pip, background-final);
+  }
+  &.selected {
+    background-color: gold;
+  }
+  &.taken {
+    background-color: transparent;
+    border-color: transparent;
+    height: 0;
+    width: 0;
+  }
+}

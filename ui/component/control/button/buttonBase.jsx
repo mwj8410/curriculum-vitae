@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import 'Style/component/control/button/base.scss';
+import './buttonBase.style.scss';
 
 class ButtonsBase extends Component {
   constructor(props) {

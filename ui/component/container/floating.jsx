@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import './standard.style.scss';
+import './floating.style.scss';
 
-class ContainerStandard extends Component {
+class ContainerFloating extends Component {
   constructor(props) {
     super(props);
     this.getClasses = this.getClasses.bind(this);
@@ -10,7 +10,7 @@ class ContainerStandard extends Component {
 
   // Pull any passed in class out of the instance and return it
   getClasses() {
-    return [ 'container-standard', (this.props.className || '') ].join(' ');
+    return [ 'container-floating', (this.props.className || '') ].join(' ');
   }
 
   render() {
@@ -24,4 +24,4 @@ class ContainerStandard extends Component {
   }
 }
 
-export default ContainerStandard;
+export default ContainerFloating;

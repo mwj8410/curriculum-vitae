@@ -1,7 +1,8 @@
 // sass-lint:disable no-color-keywords
 
 $breakpoints: (
-  small: 0,
+  x-small: 0,
+  small: 576px,
   medium: 768px,
   large: 1024px,
   xlarge: 1200px,
@@ -86,5 +87,17 @@ $color-palettes: (
   ),
   white: (
     100: #fff
+  ),
+  yellow: (
+    50: #ffffff,
+    100: #fff9c4,
+    200: #fff59d,
+    300: #fff176,
+    400: #ffee58,
+    500: #ffee58,
+    600: #fdf835,
+    700: #fbc02d,
+    800: #f9a825,
+    900: #f57f17
   )
 );

@@ -4,8 +4,12 @@
 // -----   Layout    ----- //
 // ----- ----- ----- ----- //
 $container-breakpoints: (
+  x-small,
+  small,
   medium,
-  large
+  large,
+  xlarge,
+  xxlarge
 );
 
 // ----- ----- ----- ----- //
@@ -13,24 +17,24 @@ $container-breakpoints: (
 // ----- ----- ----- ----- //
 $theme-colors: (
   backdrop: (
-    background: ( black, 100 )
+    background: ( green, 100 )
   ),
   container: (
     background: ( grey, 900 ),
-    border: ( blue, 600 ),
+    border: ( grey, 900 ),
     border-error: ( red, 300 ),
     back-shadow: ( blue, 900 ),
     back-shadow-error: ( red, 900 ),
     foreground: ( white, 100 ),
     selected-background: ( cyan, 100 )
   ),
-  field: (
-    background: ( white, 100 ),
-    //border: ( grey, 400 ),
-    error: ( red, 300 ),
-    forground: ( grey, 600 ),
-    overlay: ( grey, 900 ),
-    required: ( red, 300 )
+  control: (
+    background: ( green, 300 ),
+    border: (grey, 400)
+  ),
+  modal: (
+    backdrop: ( grey, 900 ),
+    warning: ( red, 500 )
   ),
   navigation: (
     action-background: ( cyan, 800 ),
@@ -39,10 +43,11 @@ $theme-colors: (
     foreground: ( grey, 200 )
     //foreground-active: ( grey, 600 ),
   ),
-  timer: (
-    face-line: ( black, 100 ),
-    second-hand: ( red, 300 ),
-    minute-hand: ( blue, 600)
+  pip: (
+    background: ( blue, 700 ),
+    background-final: ( yellow, 300 ),
+    background-selected: ( blue, 700 ),
+    border: ( grey, 500 )
   )
 );
 
@@ -58,8 +63,12 @@ $font-palettes: (
 );
 
 $type-sets: (
+  label: (
+    font-size: 24px,
+    letter-spacing: 1px,
+    line-height: 29px
+  ),
   mainHeading: (
-    color: #f0f,
     font-size: 72px,
     letter-spacing: -0.5px,
     line-height: 72px

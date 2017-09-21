@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import ButtonBase from './base/buttonBase.jsx';
+import ButtonBase from './buttonBase.jsx';
 
-import 'Style/component/control/button/buttonAction.scss';
+import './buttonAction.style.scss';
 
 class ButtonAction extends Component {
   constructor(props) {

@@ -1,33 +1,39 @@
-# Phae Kit #
+# Curriculum Vitae #
 
-This is a component and pattern library in development for React front-end projects.
+This project is being used to demonstrate front-end capability using React as well as to explore and finalize a component library and modular development, build, and deploy process.
 
-During development, this was seeded directly from the in-progress Novum-Sidus project with some aspects taken from the deprecated front-end of the Plinth project.
+## Development Principals ##
 
-Where possible, the design intention and understandings will be communicated in documentation within the code while more lengthy explanations about large reaching subjects will be explained in specific docuemnts that may be referenced in code comments.
+### Structure ###
+#### ./config ####
+This is two files, only one of which is tracked in version control.
 
-## Architecture ##
-First, terminology:
+`production.config.js` expresses all of the values used by the `.ejs` templates to configure the output HTML and should be used to store any variables required by any module.
 
-In React, everything is a component, so a collection of 'components' without explanation is rather ambiguous. So, for our purposes, a component is as follows:
+`local.config.js` is used as in the place of the production version if it exists. The purpse of this is to allow local development to express values without placing those values in the environment.
 
-###### A small piece of a larger thing that operates without any explicitly provided directly to it. ######
-
-This self imposed restriction is intended to reduce internal complexity of individual components by concentrating that level of logic into the view or partial layers that are application or use specific.
-
-Most components will wrap a base component. The base component is intended to offer universal functionality across a collection of similar components and should never be instantiated directly in a view or partial.
-
-### Folder Structure ###
-- `components`: contains all the generic UI elements.
-- `partials`: expresses higher level interactive components that may be use-case specific.
-- `services`: These are standard JS files that provide some processing assistance or access into external systems like HTTP request and local browser storage.
-- `styles`: Being deprecated. The style code should live adjacent to the component.
-- `views`: represents the complete pages. This is the highest level within the application and uses URI based routing over state based routing.
+Although the exact methodology used should be tailored to the applications being build, it is advised that the `local.config.js` file use a pattern like:
+```javascript
+const productionConfig = require('production.config');
+let localConfig = {};
+module.exports = {
+  global: Object.assign({}, productionConfig.global, localConfig.global)
+};
+```
 
 
-## SVG Assets ##
-All included SVG assets should be run through an optimizer like the one at `https://simon.html5.org/tools/js/svg-optimizer/`, and use a uniform viewport size.
+#### ./ui/ ####
+- `asset`: non-executable static files.
+- `component`: generic UI elements. Should have no connection to any outside state. Require all values be passed in.
+- `module`: functionally isolated application
+- `partial`: sections of pages that may be re-used by several applications. Make minimal use on required outside state.
+- `service`: vanilla modules that provide some needed functionality.
+- `style`: global or project-wide configuration. Only `global.scss` should be allowed to directly output any CSS. (And this is in debate at the moment.)
 
+#### ./views/ ####
+This stores oll of the `.ejs` templates and partials needed to build the application. It is assumed by the build process that `base.ejs` exists as this is the tempalte that is used for freating the various output `.html` files for each Reach module.
+
+Additional require `.html` files can be added to the build process and should 
 
 ## Style Development ##
 
@@ -36,7 +42,7 @@ Colors are a two layer system intended to provide the most robust expressability
 
 First, provide color pallets as follows:
 
-```
+```scss
 $color-palettes: (
   grey: (
     50: #FAFAFA,
@@ -55,7 +61,7 @@ $color-palettes: (
 
 The idea here is to provide a large number of defined colors to choose from for your needs. Then we reference these colors by usage as follows:
 
-```
+```scss
 $theme-colors: (
   container: (
     background: (grey, 500),
@@ -73,7 +79,7 @@ The thinking behind the design is that the usage of a color will alter over time
 There are two typographic structures available for implementing text types. There are no specific restrictions that enforces a that any specific declaration be placed in one structure or the other. It is, however, advised that the declarations be divided into one batch that defines the font and another that defines the usage of the font.
 
 The design intention is to place the definition declarations in the `$fontPallets` structure as follows:
-```
+```scss
 $fontPalettes: (
   openSansBoldItallic: (
     font-family: 'Open Sans',
@@ -84,7 +90,7 @@ $fontPalettes: (
 ```
 
 The `$typeSets` structure is intended for usage based rules as follows:
-```
+```scss
 $typeSets: (
   mainHeading: (
     color: #f0f,
@@ -96,7 +102,7 @@ $typeSets: (
 ```
 
 Actual usage of these two structures is to reference the `font` and `typeset` mixins as follows:
-```
+```scss
 h1 {
   @include font (openSansBoldItallic);
   @include typeset (mainHeading);

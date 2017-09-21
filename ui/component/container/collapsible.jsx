@@ -27,7 +27,7 @@ class ContainerCollapsible extends Component {
     return (
       <div className={ this.getClasses() } onClick={ this.toggleOpen }>
         <div className={ `title ${this.state.open ? 'open' : 'closed' }` }>
-          <h3>{ this.props.title }</h3>
+          <label>{ this.props.title }</label>
         </div>
 
         <div className={ `content ${this.state.open ? 'open' : 'closed' }` }>

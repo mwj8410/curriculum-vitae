@@ -1,12 +1,13 @@
 @import '../../style/imports';
 
-.container-standard {
+.container-floating {
   background: color(container, foreground); // This is assumed to be sitting on the background
-  border: 0;
+  border: 1px solid color(container, border);
+  border-radius: 16px;
   display: block;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 16px 8px;
   max-width: 100%;
+  min-width: 320px;
   overflow-x: hidden;
   padding: 8px;
   position: relative;

@@ -1,3 +1,96 @@
-.profile-dashboard {
-  margin-top: 24px;
+@import "../../style/imports";
+
+.nim-dashboard {
+  // Override of Constituent Components
+  div.container-floating {
+    max-width: 640px;
+  }
+
+  // Own Properties
+  p {
+    margin-left: 16px;
+  }
+
+  @include breakpoint(small down) {
+    .wrapper-content {
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 16px 0;
+      margin-left: auto;
+      margin-right: auto;
+      width: 220px;
+
+      div.container-floating {
+        display: flex;
+        min-width: 64px;
+      }
+    }
+  }
+
+  .control-track {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 16px;
+
+    > button {
+      margin-bottom: 16px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include breakpoint(medium up) {
+      display: block;
+      flex-direction: row;
+
+      > button {
+        margin-bottom: 0;
+        margin-right: 16px;
+      }
+    }
+
+    label {
+      @include typeset(label);
+      margin-bottom: 16px;
+
+      @include breakpoint(medium up) {
+        margin-bottom: 0;
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .pip-track {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-top: 32px;
+    padding: 16px;
+
+    @include breakpoint(medium up) {
+      flex-direction: row;
+      margin-top: 0;
+    }
+
+    > div {
+      @include breakpoint(small down) {
+        margin-bottom: 16px;
+        margin-left: auto;
+        margin-right: auto;
+
+        &.taken {
+          margin-bottom: 0;
+        }
+      }
+
+      @include breakpoint(medium up) {
+        margin-bottom: 0;
+        margin-right: 16px;
+
+        &.taken {
+          margin-right: 0;
+        }
+      }
+    }
+  }
 }
